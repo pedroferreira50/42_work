@@ -16,13 +16,18 @@ int	ft_atoi(const char *nptr)
 		if (nptr[i] == '-')
 			minus = -1;
 		i++;
-	}		
-	while (nptr[i] != '\0' && (nptr[i] >= '0' && nptr[i] <= '9'))
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		j = j + (nptr[i] - '0');
-		if (nptr[i + 1] != '\0' && (nptr[i + 1] >= '0' && nptr[i + 1] <= '9'))
-			j = j * 10;
+		j = (j * 10) + (nptr[i] - '0');
 		i++;
 	}
 	return (j * minus);
 }
+/*
+int	main(void)
+{
+	char *str = "       123466666666";
+	printf("%d\n", ft_atoi(str));
+	printf("%d\n", atoi(str));
+}*/
