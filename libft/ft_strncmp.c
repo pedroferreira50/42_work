@@ -12,7 +12,15 @@
 
 #include "libft.h"
 
-int	strncmp(const char *s1, const char *s2, size_t n)
+static int	cmp_char(char c1, char c2)
+{
+	if ((unsigned char)c1 != (unsigned char)c2)
+		return ((unsigned char)c1 - (unsigned char)c2);
+	return (0);
+}
+
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
@@ -22,5 +30,5 @@ int	strncmp(const char *s1, const char *s2, size_t n)
 	if (i == n)
 		return (0);
 	else
-		return (s1[i] - s2[i]);
+		return (cmp_char(s1[i], s2[i]));
 }

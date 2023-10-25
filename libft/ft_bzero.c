@@ -22,7 +22,7 @@ void	ft_bzero(void *s, size_t n)
 		*p++ = 0;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	s1[30] = "123456789";
@@ -43,4 +43,4 @@ int	main(void)
 	}
 
 	return (0);
-}
+}*/
