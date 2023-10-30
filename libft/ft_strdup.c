@@ -16,21 +16,24 @@ char	*ft_strdup(const char *s)
 {
 	char	*str;
 	int		length;
-	int	i;
+	int		i;
 
 	i = 0;
-	//if (s == (void *)0)
-	//	return ((void *)0);
 	length = ft_strlen(s);
 	str = malloc((length + 1) * sizeof(char));
 	if (str == (void *)0)
 		return ((void *)0);
 	if (str != (void *)0)
+	{
 		while (s[i] != '\0')
 		{
 			str[i] = s[i];
 			i++;
 		}
+	}
 	str[i] = '\0';
 	return (str);
 }
+
+//if (s == (void *)0)
+	//	return ((void *)0);

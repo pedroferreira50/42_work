@@ -27,6 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 		p = (char *)s;
 	return (p);
 }
+
 /*
 int	main(void)
 {

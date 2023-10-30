@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int is_white_space(char c, char const *set) 
+int	is_white_space(char c, char const *set)
 {
 	int	i;
 
@@ -11,7 +11,7 @@ int is_white_space(char c, char const *set)
 			return (1);
 		i++;
 	}
-    return 0;
+	return (0);
 }
 
 int	get_first_position(char const *str, char *set)
@@ -24,14 +24,14 @@ int	get_first_position(char const *str, char *set)
 	return (i);
 }
 
-int	get_last_position(char const *str, char *set, int start) 
+int	get_last_position(char const *str, char *set, int start)
 {
-    int i;
+	int	i;
 
 	i = ft_strlen(str);
-    while (i > start && is_white_space(str[i - 1], set))
-        i--;
-    return (i);
+	while (i > start && is_white_space(str[i - 1], set))
+		i--;
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -40,21 +40,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	start;
 	size_t	end;
-
 	char	*trimmed;
 
-    i = 0;
+	i = 0;
 	start = get_first_position(s1, (char *)set);
 	end = get_last_position(s1, (char *)set, start);
-    length = end - start + 1;
-    trimmed = (char *)malloc(length);
+	length = end - start + 1;
+	trimmed = (char *)malloc(length);
 	if (!trimmed)
 		return (NULL);
-	while (start < end) 
-        trimmed[i++] = s1[start++];
+	while (start < end)
+		trimmed[i++] = s1[start++];
 	trimmed[i] = '\0';
-    return (trimmed);
+	return (trimmed);
 }
+
 /*
 int	main(void)
 {

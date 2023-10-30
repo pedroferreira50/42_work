@@ -30,14 +30,9 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	if (dest_length < size - 1 && size > 0)
 	{
 		while (i + dest_length < size - 1 && src[i] != '\0')
-		{
-			dest[j] = src[i];
-			i++;
-			j++;
-		}
+			dest[j++] = src[i++];
 		dest[j] = '\0';
 	}
-	
 	if (dest_length >= size)
 		dest_length = size;
 	return (dest_length + src_length);

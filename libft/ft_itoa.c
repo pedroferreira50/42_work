@@ -1,11 +1,10 @@
 #include "libft.h"
 
-
 static int	ft_abs(int value)
 {
 	if (value < 0)
 		return (-value);
-	else 
+	else
 		return (value);
 }
 
@@ -16,6 +15,7 @@ static int	isnegative(int n)
 	else
 		return (0);
 }
+
 static int	countint(int n)
 {
 	int	length;
@@ -75,6 +75,7 @@ char
 	ft_strrev(str);
 	return (str);
 }
+
 /*
 int	main(void)
 {

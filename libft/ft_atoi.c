@@ -24,6 +24,7 @@ int	ft_atoi(const char *nptr)
 	}
 	return (j * minus);
 }
+
 /*
 int	main(void)
 {
