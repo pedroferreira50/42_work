@@ -1,51 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fl-hote <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 17:57:58 by fl-hote           #+#    #+#             */
-/*   Updated: 2022/03/11 11:35:42 by fl-hote          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <limits.h>
-# include <fcntl.h>
-# include <stdarg.h>
 # include <string.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
-# endif
-
-typedef struct s_glist
-{
-	int				startc;
-	int				endc;
-	char			string[BUFFER_SIZE];
-	struct s_glist	*next;
-}				t_glist;
-
-typedef struct s_gvar
-{
-	size_t	bytes_read;
-	size_t	nb_nodes;
-	int		eoleof;
-}				t_gvar;
-
-void	free_all_list(t_glist *node);
-char	*stash_to_out(t_glist **ptr, size_t nb_nodes, int eoleof);
-int		stopcar_in_node(t_glist *node, t_gvar *var);
-t_glist	*create_node(size_t *nb);
-t_glist	*fill_nodes(t_glist **sptr, int fd, t_gvar *var);
-char	*get_next_line(int fd);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -82,22 +41,19 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-typedef struct s_list
+typedef struct	s_list
 {
-	void			*content;
-	struct s_list	*next;
-}		t_list;
+void		*content;
+struct s_list	*next;
+}	t_list;
 
-int		ft_printf(const char *str, ...);
-int		ft_formats(va_list args, const char format);
-int		ft_putchar(int c);
-int		ft_printstr(char *str);
-int		ft_printnbr(int n);
-void	ft_putnbr(unsigned int p, int *ptrlen);
-int		ft_printptr(unsigned long long ptr);
-int		ft_print_uint(unsigned int n);
-int		ft_print_hex(unsigned int num, const char format);
-void	ft_put_hex(unsigned int num, const char format);
-int		ft_hex_len(unsigned int num);
-
+t_list *ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
+int ft_lstsize(t_list *lst);
+t_list *ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstdelone(t_list *lst, void (*del)(void *));
+void ft_lstclear(t_list **lst, void (*del)(void *));
+void ft_lstiter(t_list *lst, void (*f)(void *));
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif
