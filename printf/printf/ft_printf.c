@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/14 16:13:40 by pviegas-          #+#    #+#             */
+/*   Updated: 2023/11/14 17:28:08 by pviegas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
@@ -25,48 +37,44 @@ static int	ft_putstr(char *str)
 	return (length);
 }
 
-static void findformat(char c,va_list args, int *length)
+static void	findformat(char c, va_list args, int *len)
 {
-	void *ptr;
+	void	*ptr;
 
 	if (c == 'd')
-        *length += ft_putnbr_base(va_arg(args, int), "0123456789");
+		*len += ft_base(va_arg(args, int), "0123456789");
 	else if (c == 'c')
-        *length += ft_putchar((char)va_arg(args, int));
+		*len += ft_putchar((char)va_arg(args, int));
 	else if (c == 's')
-        *length += ft_putstr((char *)va_arg(args, char *));
+		*len += ft_putstr((char *)va_arg(args, char *));
 	else if (c == 'p')
 	{
 		ptr = va_arg(args, void *);
 		if ((unsigned long long)ptr == 0)
-		{
-			*length += ft_putstr("(nil)");
-			return ;
-		}
-		*length += ft_putchar('0');
-    	*length += ft_putchar('x');
-    	*length += ft_putnbr_base_ul((unsigned long long)ptr, "0123456789abcdef");
+			*len += ft_putstr("(nil)");
+		else
+			*len += ft_base_ul((unsigned long)ptr, "0123456789abcdef");
 	}
 	else if (c == 'i')
-       *length += ft_putnbr_base(va_arg(args, int), "0123456789");
+		*len += ft_base(va_arg(args, int), "0123456789");
 	else if (c == 'u')
-        *length += ft_putnbr_base_u(va_arg(args, int), "0123456789");
+		*len += ft_base_u(va_arg(args, int), "0123456789");
 	else if (c == 'x')
-        *length += ft_putnbr_base_u((unsigned long long)va_arg(args, int), "0123456789abcdef");
+		*len += ft_base_u((unsigned long)va_arg(args, int), "0123456789abcdef");
 	else if (c == 'X')
-        *length += ft_putnbr_base_u((unsigned long long)va_arg(args, int), "0123456789ABCDEF");
-	else if (c == '%')	
-        *length += ft_putchar('%');
+		*len += ft_base_u((unsigned long)va_arg(args, int), "0123456789ABCDEF");
+	else if (c == '%')
+		*len += ft_putchar('%');
 }
 
 int	ft_printf(const char *str, ...)
 {
-	int	i;
-	int	length;
+	int		i;
+	int		length;
+	va_list	args;
 
 	i = 0;
 	length = 0;
-	va_list args;
 	va_start(args, str);
 	while (str[i] != '\0')
 	{

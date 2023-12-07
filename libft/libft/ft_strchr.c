@@ -6,7 +6,7 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:07:58 by pviegas-          #+#    #+#             */
-/*   Updated: 2023/10/03 15:30:15 by pviegas-         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:34:37 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,11 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
 /*
+int	main(void)
 {
- 	int	i;
-
-	i = 0;
- 	while (s[i])
- 	{
- 		if (s[i] == c)
-			return ((char *)&s[i]);
-		i++;
- 	}
- 	if (s[i] == c)
- 		return ((char *)&s[i]);
- 	return (NULL);
+	char	c = 'a';
+	char	*str = "a1a2a3a4a5a6a7a8a9";
+	printf("%s", ft_strchr(str, c));
+	return (0);
 }*/

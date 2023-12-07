@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/13 12:21:02 by pviegas-          #+#    #+#             */
+/*   Updated: 2023/12/07 08:51:20 by pviegas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	countwords(const char *s, char c)
@@ -122,15 +134,3 @@ int	main(void)
 
 	return (0);
 }*/
-			/*
-			j = i;
-			while (s[j] != (char)c && s[j] != '\0')
-				j++;
-			sstr[k] = (char *)malloc((j - i + 1) * sizeof(char));
-			if (sstr[k] == NULL)
-				return (free_on_error(sstr, k));
-			l = 0;
-			while (i < j)
-				sstr[k][l++] = s[i++];
-			sstr[k][l] = '\0';
-			*/

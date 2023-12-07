@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pviegas- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 18:53:56 by pviegas-          #+#    #+#             */
-/*   Updated: 2023/08/09 16:13:39 by pviegas-         ###   ########.fr       */
+/*   Created: 2023/11/14 16:15:15 by pviegas-          #+#    #+#             */
+/*   Updated: 2023/11/14 16:50:39 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,40 +60,37 @@ static long	is_negative(long nbr, int *count)
 	{
 		ft_putchar('-');
 		nbr = -nbr;
-        (*count)++;
+		(*count)++;
 	}
 	return (nbr);
 }
 
-int	ft_putnbr_base(int nbr, char *base)
+int	ft_base(int nbr, char *base)
 {
-	long	length;
 	long	j;
 	long	l;
 	char	k[32];
-    int count;
+	int		count;
 
 	l = nbr;
 	j = 0;
-    count = 0;
-	length = ft_strlen(base);
+	count = 0;
 	if (valid_base(base) == 0)
-		return 0;
+		return (0);
 	if (l < 0)
 		l = is_negative(l, &count);
-	while (l >= length)
+	while (l >= ft_strlen(base))
 	{
-		k[j++] = base[l % length];
-		l = l / length;
+		k[j++] = base[l % ft_strlen(base)];
+		l = l / ft_strlen(base);
 	}
 	k[j] = base[l];
 	while (j >= 0)
 	{
-		ft_putchar(k[j]);
-		j--;
-        count++;
+		ft_putchar(k[j--]);
+		count++;
 	}
-    return (count);
+	return (count);
 }
 /*
 int main() {
@@ -116,4 +113,3 @@ int main() {
 
 	return (0);
 }*/
-

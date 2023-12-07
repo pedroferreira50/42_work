@@ -6,18 +6,11 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:49:26 by pviegas-          #+#    #+#             */
-/*   Updated: 2023/10/03 16:57:53 by pviegas-         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:40:10 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	cmp_char(char c1, char c2)
-{
-	if ((unsigned char)c1 != (unsigned char)c2)
-		return ((unsigned char)c1 - (unsigned char)c2);
-	return (0);
-}
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -29,5 +22,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (i == n)
 		return (0);
 	else
-		return (cmp_char(s1[i], s2[i]));
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+/* int	main(void)
+{
+	printf("%d", ft_strncmp("\x12\xff\x65\x12\xbd\xde\xad", "\x12\x02", 6));
+	return (0);
+} */

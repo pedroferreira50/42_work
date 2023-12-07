@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 15:41:49 by pviegas-          #+#    #+#             */
-/*   Updated: 2023/11/14 16:04:56 by pviegas-         ###   ########.fr       */
+/*   Created: 2023/11/14 16:06:33 by pviegas-          #+#    #+#             */
+/*   Updated: 2023/11/14 16:06:34 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*remove_substring(char *main_str, size_t n)
 {

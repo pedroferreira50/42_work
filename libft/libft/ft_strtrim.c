@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/13 12:23:12 by pviegas-          #+#    #+#             */
+/*   Updated: 2023/12/06 15:24:28 by pviegas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	is_white_space(char c, char const *set)
+static int	is_white_space(char c, char const *set)
 {
 	int	i;
 
@@ -14,7 +26,7 @@ int	is_white_space(char c, char const *set)
 	return (0);
 }
 
-int	get_first_position(char const *str, char *set)
+static int	get_first_position(char const *str, char *set)
 {
 	int	i;
 
@@ -24,7 +36,7 @@ int	get_first_position(char const *str, char *set)
 	return (i);
 }
 
-int	get_last_position(char const *str, char *set, int start)
+static int	get_last_position(char const *str, char *set, int start)
 {
 	int	i;
 
@@ -54,10 +66,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
-
 /*
 int	main(void)
 {
-	char s1[] = "lorem ipsum dolor sit amet";
-	printf("%s", ft_strtrim(s1, "te"));
+	char *str = "lorem ipsum dolor sit amet";
+	
+	printf("%s", ft_strtrim(str, "te"));
+	return (0);
 }*/

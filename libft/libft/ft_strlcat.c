@@ -6,7 +6,7 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:29:40 by pviegas-          #+#    #+#             */
-/*   Updated: 2023/10/04 13:53:01 by pviegas-         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:19:01 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,20 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 		dest_length = size;
 	return (dest_length + src_length);
 }
+/*
+int main(void)
+{
+    char dest[20] = "Hello";
+    const char *src = " world!";
+    size_t dest_size = sizeof(dest);
+
+    printf("Original dest: %s\n", dest);
+
+    size_t result = ft_strlcat(dest, src, 10);
+
+    printf("Concatenated string: %s\n", dest);
+    printf("Return value: %zu\n", result);
+
+    return 0;
+}
+*/

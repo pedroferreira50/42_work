@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/13 12:22:54 by pviegas-          #+#    #+#             */
+/*   Updated: 2023/12/06 16:21:38 by pviegas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -28,3 +40,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[j + i] = '\0';
 	return (str);
 }
+/*
+int	main(void)
+{
+	char	*str = "0123456789";
+	char	*str2 = "abcdefghijkl";
+	
+	printf("%s", ft_strjoin(str, str2));
+	return (0);
+}*/

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/02 17:00:15 by pviegas-          #+#    #+#             */
+/*   Updated: 2023/12/07 10:04:25 by pviegas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_abs(int value)
@@ -33,8 +45,7 @@ static int	countint(int n)
 	return (length);
 }
 
-static void
-	ft_strrev(char *str)
+static void	ft_strrev(char *str)
 {
 	size_t	length;
 	size_t	i;
@@ -51,8 +62,7 @@ static void
 	}
 }
 
-char
-	*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:24:19 by pviegas-          #+#    #+#             */
-/*   Updated: 2023/10/03 15:30:15 by pviegas-         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:33:13 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
+/*
+int	main(void)
+{
+	char *str = "0123456789";
+	char *strcpy;
 
-//if (s == (void *)0)
-	//	return ((void *)0);
+	strcpy = ft_strdup(str);
+	printf("%s", strcpy);
+	return (0);
+}*/

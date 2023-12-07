@@ -6,7 +6,7 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:46:44 by pviegas-          #+#    #+#             */
-/*   Updated: 2023/10/04 13:28:37 by pviegas-         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:08:50 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (i);
 }
+/*
+int	main(void)
+{
+	char	*str = "0123456789";
+	char	str2[20];
+	size_t	length = ft_strlcpy(str2, str, 5);
+	
+	printf("%zu\n%s\n", length, str2);
+	return (0);
+}*/
